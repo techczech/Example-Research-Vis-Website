@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { FULL_DATASET } from '../constants';
-import { Search, Download, ArrowUpDown, Filter } from 'lucide-react';
+import { Search, Download, ArrowUpDown, Filter, ChevronDown } from 'lucide-react';
 
 export const DataBrowser: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -102,12 +102,15 @@ export const DataBrowser: React.FC = () => {
             <select
               value={selectedRegion}
               onChange={(e) => setSelectedRegion(e.target.value)}
-              className="block w-full pl-10 pr-10 py-2 border border-slate-300 rounded-lg leading-5 bg-white focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm appearance-none"
+              className="block w-full pl-10 pr-10 py-2 border border-slate-300 rounded-lg leading-5 bg-white focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm appearance-none cursor-pointer"
             >
               {regions.map(r => (
                 <option key={r} value={r}>{r}</option>
               ))}
             </select>
+            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+              <ChevronDown size={16} className="text-slate-400" />
+            </div>
           </div>
         </div>
       </div>

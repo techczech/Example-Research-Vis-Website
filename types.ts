@@ -29,3 +29,39 @@ export interface ChartConfig {
   xAxis: keyof CountryStat | 'region';
   yAxis: keyof CountryStat;
 }
+
+// Content Types
+export interface Link {
+  text: string;
+  url: string;
+}
+
+export interface HeroContent {
+  title: string;
+  description: string;
+  links: Link[];
+  disclaimer: {
+    buttonText: string;
+    content: string;
+  };
+  highlights: {
+    label: string;
+    value: string;
+    type: string;
+  }[];
+}
+
+export interface AnalysisSection {
+  title: string;
+  content: string;
+}
+
+export interface AnalysisContent {
+  title: string;
+  intro: string;
+  sections: AnalysisSection[];
+  caveat: {
+    title: string;
+    content: string;
+  };
+}

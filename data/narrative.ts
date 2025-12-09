@@ -1,0 +1,69 @@
+export default {
+  "hero": {
+    "title": "Global Multidimensional Poverty Index",
+    "description": "This is an example of data sharing based on the MPI index. Full code is available on GitHub. The data is sourced from OPHI (MN-61) and the analysis was performed by ASTA Data Voyager.",
+    "links": [
+      { "text": "GitHub", "url": "https://github.com/techczech/Example-Research-Vis-Website" },
+      { "text": "OPHI (MN-61)", "url": "https://ophi.org.uk/publications/MN-61" },
+      { "text": "ASTA Data Voyager", "url": "https://asta.allen.ai/share/d4ab6941-ff89-4d81-94d6-068001e75ef2" }
+    ],
+    "disclaimer": {
+      "buttonText": "DISCLAIMER",
+      "content": "This is an example of data analysis and results sharing process only. It took about 15 minutes to create this site. No accuracy checks were performed. This is NOT a presentation of the true data or information only an example of what is possible."
+    },
+    "highlights": [
+      {
+        "label": "Highest Poverty",
+        "value": "Sub-Saharan Africa",
+        "type": "high"
+      },
+      {
+        "label": "Lowest Poverty",
+        "value": "Europe & Central Asia",
+        "type": "low"
+      },
+      {
+        "label": "Global Coverage",
+        "value": "6 Major Regions",
+        "type": "info"
+      }
+    ]
+  },
+  "analysis": {
+    "title": "Analyst's Interpretation",
+    "intro": "The data reveals a world of deep divides. While some regions have successfully established robust social safety nets, others continue to struggle with systemic deprivation.",
+    "sections": [
+      {
+        "title": "Key Trends 2014-2023",
+        "content": "The global MPI landscape remains starkly unequal. Sub-Saharan Africa leads in poverty incidence and intensity, with nearly one in two persons multidimensionally poor. Asia’s performance is mixed, with South Asia retaining much higher poverty than East Asia. Europe & Central Asia demonstrates the potential for rapid poverty elimination."
+      },
+      {
+        "title": "Data Gaps & Anomalies",
+        "content": "About 7% of the dataset has missing values. Notably, the bottom 5 highest-poverty country slots are empty in the source data, likely excluding extreme cases like Niger or Chad. Some headcount values were anomalous, suggesting percentage coding differences."
+      },
+      {
+        "title": "Conclusion",
+        "content": "While there has been remarkable progress in some regions, multidimensional poverty is still highly concentrated geographically. Sub-Saharan Africa and South Asia drive global rates. Europe & Central Asia illustrates what is possible with comprehensive policies."
+      }
+    ],
+    "caveat": {
+      "title": "Important Data Caveat",
+      "content": "The bottom 5 positions (highest poverty) are unfilled in the source data. This is likely due to missing values for countries typically facing extreme poverty (e.g., Niger, Chad, South Sudan). As such, the global challenge may be underestimated in summary statistics."
+    }
+  },
+  "glossary": {
+    "title": "What is MPI?",
+    "description": "The Global Multidimensional Poverty Index (MPI) is a key international resource that measures acute multidimensional poverty across more than 100 developing countries.",
+    "items": [
+      { "term": "Headcount Ratio", "definition": "The percentage of people who are poor." },
+      { "term": "Intensity", "definition": "The average percentage of dimensions in which poor people are deprived." },
+      { "term": "MPI", "definition": "Headcount × Intensity." }
+    ]
+  },
+  "footer": {
+    "dataAttribution": "Data derived from global MPI analysis. 2014-2023 Survey Data.",
+    "authorLabel": "Author",
+    "authorName": "Dominik Lukeš",
+    "authorUrl": "https://dominiklukes.net"
+  }
+};
