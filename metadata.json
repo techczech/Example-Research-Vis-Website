@@ -1,0 +1,5 @@
+{
+  "name": "Global MPI Explorer",
+  "description": "Interactive dashboard exploring global Multidimensional Poverty Index (MPI) data, highlighting regional disparities and key trends.",
+  "requestFramePermissions": []
+}
