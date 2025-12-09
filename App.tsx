@@ -8,9 +8,11 @@ import { Visualizer } from './components/Visualizer';
 import { DataBrowser } from './components/DataBrowser';
 import { BarChart3, Globe2, BookOpen, Database, PieChart } from 'lucide-react';
 import { TabItem } from './types';
+import narrative from './data/narrative';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('overview');
+  const { glossary, footer } = narrative;
 
   const tabs: TabItem[] = [
     { id: 'overview', label: 'Overview', icon: BarChart3 },
@@ -84,14 +86,14 @@ const App: React.FC = () => {
                     <div className="space-y-8">
                         <TopCountries />
                         <div className="bg-white p-6 rounded-xl shadow-md border border-slate-100">
-                           <h3 className="font-bold text-lg mb-4 text-slate-800">What is MPI?</h3>
+                           <h3 className="font-bold text-lg mb-4 text-slate-800">{glossary.title}</h3>
                            <p className="text-sm text-slate-600 mb-4">
-                             The Global Multidimensional Poverty Index (MPI) is a key international resource that measures acute multidimensional poverty across more than 100 developing countries.
+                             {glossary.description}
                            </p>
                            <ul className="text-sm text-slate-600 space-y-2 list-disc list-inside">
-                             <li><strong>Headcount Ratio:</strong> The percentage of people who are poor.</li>
-                             <li><strong>Intensity:</strong> The average percentage of dimensions in which poor people are deprived.</li>
-                             <li><strong>MPI:</strong> Headcount × Intensity.</li>
+                             {glossary.items.map((item, idx) => (
+                               <li key={idx}><strong>{item.term}:</strong> {item.definition}</li>
+                             ))}
                            </ul>
                         </div>
                     </div>
@@ -146,8 +148,11 @@ const App: React.FC = () => {
 
       <footer className="bg-white border-t border-slate-200 mt-16 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-slate-400 text-sm">
-            Data derived from global MPI analysis. 2014-2023 Survey Data.
+          <p className="text-slate-400 text-sm mb-2">
+            {footer.dataAttribution}
+          </p>
+          <p className="text-slate-500 text-sm font-medium">
+             {footer.authorLabel}: <a href={footer.authorUrl} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 underline transition-colors">{footer.authorName}</a>
           </p>
         </div>
       </footer>
